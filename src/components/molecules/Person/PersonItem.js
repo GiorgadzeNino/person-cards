@@ -2,10 +2,9 @@ import { useState } from "react"
 import Card from '../../atoms/Card'
 import Avatar from '../../atoms/Avatar'
 
-const PersonItem = ({ name, country, region, phone, address, id, handleDelete, opModal,clModal }) => {
+const PersonItem = ({ name, country, region, phone, address, id, handleDelete, opModal }) => {
 
     const [isFrontShown, setIsFrontShown] = useState(false)
-    const [isOpenModal, setIsOpenModal] = useState(false)
 
     const firstName = name.split(' ')[0]
     const lastName = name.split(' ')[1]
