@@ -8,21 +8,37 @@ function App() {
 
   const [personData, setPersonData] = useState(data)
   const [isOpenModal, setIsOpenModal] = useState(false)
+  const [editPerson, setEditPerson] = useState({
+    id: '',
+    name: '',
+    email: '',
+    country: '',
+    region: '',
+    numberrange: '',
+    phone: '',
+    postalZip: '',
+    address: '',
+  })
 
   const handleDelete = (id) => {
     const newPersonData = personData.filter(person => person.id !== id)
     setPersonData(newPersonData)
   }
-  const opModal = () => {
+
+  const handleEdit = (id) => {
+    const newPersonData = personData.filter(person => person.id === id);
+    setEditPerson(newPersonData[0])
+    opModal(id)
+  }
+
+  const opModal = (id) => {
     setIsOpenModal(true);
   }
   const clModal = () => {
     setIsOpenModal(false);
   }
 
-
   const handleChange = (childData) => {
-    console.log(childData)
     setPersonData(childData)
   }
 
@@ -32,12 +48,12 @@ function App() {
         <button className='bg-blue-300 rounded px-2' onClick={() => opModal()}> Add person</button>
       </div>
       <div className='flex flex-wrap'>
-        <AddPerson opModal={isOpenModal} closeModal={clModal} changePersonalData={handleChange} ></AddPerson>
+        <AddPerson opModal={isOpenModal} closeModal={clModal} changePersonalData={handleChange} editPersonData={editPerson}></AddPerson>
         {personData.map(person => (
-          <PersonItem key={person.id} {...person} handleDelete={handleDelete} />
+          <PersonItem key={person.id} {...person} handleDelete={handleDelete} handleEdit={handleEdit} />
         ))}
       </div>
-    </div>
+    </div >
   );
 }
 
