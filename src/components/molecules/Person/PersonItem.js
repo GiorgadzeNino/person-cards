@@ -2,9 +2,10 @@ import { useState } from "react"
 import Card from '../../atoms/Card'
 import Avatar from '../../atoms/Avatar'
 
-const PersonItem = ({ name, country, region, phone, address, id, handleDelete }) => {
+const PersonItem = ({ name, country, region, phone, address, id, handleDelete, opModal,clModal }) => {
 
     const [isFrontShown, setIsFrontShown] = useState(false)
+    const [isOpenModal, setIsOpenModal] = useState(false)
 
     const firstName = name.split(' ')[0]
     const lastName = name.split(' ')[1]
@@ -27,7 +28,7 @@ const PersonItem = ({ name, country, region, phone, address, id, handleDelete })
                             className='px-2 font-bold text-white bg-red-400 rounded-lg right-6 p-4'
                             onClick={() => handleDelete(id)}
                         >
-                            <svg className="h-8 w-8 text-red-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" strokeLineap="round" stroke-linejoin="round">
+                            <svg className="h-8 w-8 text-red-500" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokelineap="round" strokelinejointrokelinejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" />
                                 <line x1="4" y1="7" x2="20" y2="7" />
                                 <line x1="10" y1="11" x2="10" y2="17" />
@@ -39,7 +40,7 @@ const PersonItem = ({ name, country, region, phone, address, id, handleDelete })
                         </button>
                         <button
                             className='px-2 p-4 font-bold text-white bg-red-400 rounded-lg right-6'
-                            onClick={() => handleDelete(id)}
+                            onClick={() => opModal()}
                         >
                             <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">  <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />  <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg>
                         </button>
