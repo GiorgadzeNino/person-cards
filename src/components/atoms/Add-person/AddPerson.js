@@ -11,6 +11,7 @@ export default function Example({ opModal, closeModal, changePersonalData, editP
             bottom: 'auto',
             marginRight: '-50%',
             transform: 'translate(-50%, -50%)',
+            maxHeight: '80vh'
         },
     };
     const [newUser, setNewUser] = useState(
@@ -60,7 +61,7 @@ export default function Example({ opModal, closeModal, changePersonalData, editP
             const newState = newUser;
             newState[e.target.id] = e.target.value;
             setNewUser(newState)
-            setEditedUser(newState)
+            // setEditedUser(newState)
         }
     }
 
@@ -74,7 +75,6 @@ export default function Example({ opModal, closeModal, changePersonalData, editP
 
     const handleFillData = () => {
         setEditedUser(editPersonData)
-        setNewUser(editPersonData)
     }
     return (
         <Modal
@@ -85,81 +85,81 @@ export default function Example({ opModal, closeModal, changePersonalData, editP
         >
             <button onClick={closeModal}>x</button>
             <div className="w-full max-w-xs">
-                <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                    <div className="mb-4">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+                <form >
+                    <div className="mb-2">
+                        <label className="block text-gray-700 text-sm font-bold" htmlFor="name">
                             Name
                         </label>
-                        <input className='shadow appearance-outline border-2 rounded w-full py-2 px-3
+                        <input className='shadow appearance-outline border-2 rounded w-full px-3
                      text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
                             onChange={(e) => handleChange(e)} value={newUser.name} id="name" type="text" />
                     </div>
-                    <div className="mb-6">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+                    <div className="mb-2">
+                        <label className="block text-gray-700 text-sm font-bold" htmlFor="email">
                             Email
                         </label>
-                        <input className='shadow appearance-outline border-2 rounded w-full py-2 px-3
+                        <input className='shadow appearance-outline border-2 rounded w-full px-3
                      text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
                             onChange={(e) => handleChange(e)} value={newUser.email}
                             id="email" type="text" />
                     </div>
-                    <div className="mb-6">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="country">
+                    <div className="mb-2">
+                        <label className="block text-gray-700 text-sm font-bold" htmlFor="country">
                             country
                         </label>
-                        <input className='shadow appearance-outline border-2 rounded w-full py-2 px-3
+                        <input className='shadow appearance-outline border-2 rounded w-full px-3
                      text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
                             onChange={(e) => handleChange(e)} value={newUser.country}
                             id="country" type="text" />
                     </div>
-                    <div className="mb-6">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="region">
+                    <div className="mb-2">
+                        <label className="block text-gray-700 text-sm font-bold" htmlFor="region">
                             region
                         </label>
-                        <input className='shadow appearance-outline border-2 rounded w-full py-2 px-3
+                        <input className='shadow appearance-outline border-2 rounded w-full px-3
                      text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
                             onChange={(e) => handleChange(e)} value={newUser.region}
                             id="region" type="text" />
                     </div>
-                    <div className="mb-6">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="numberrange">
+                    <div className="mb-2">
+                        <label className="block text-gray-700 text-sm font-bold" htmlFor="numberrange">
                             numberrange
                         </label>
-                        <input className='shadow appearance-outline border-2 rounded w-full py-2 px-3
+                        <input className='shadow appearance-outline border-2 rounded w-full px-3
                      text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
                             onChange={(e) => handleChange(e)} value={newUser.numberrange}
                             id="numberrange" type="text" />
                     </div>
-                    <div className="mb-6">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="phone">
+                    <div className="mb-2">
+                        <label className="block text-gray-700 text-sm font-bold" htmlFor="phone">
                             phone
                         </label>
-                        <input className='shadow appearance-outline border-2 rounded w-full py-2 px-3
+                        <input className='shadow appearance-outline border-2 rounded w-full px-3
                      text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
                             onChange={(e) => handleChange(e)} value={newUser.phone}
                             id="phone" type="text" />
                     </div>
-                    <div className="mb-6">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="postalZip">
+                    <div className="mb-2">
+                        <label className="block text-gray-700 text-sm font-bold" htmlFor="postalZip">
                             postalZip
                         </label>
-                        <input className='shadow appearance-outline border-2 rounded w-full py-2 px-3
+                        <input className='shadow appearance-outline border-2 rounded w-full px-3
                      text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
                             onChange={(e) => handleChange(e)} value={newUser.postalZip}
                             id="postalZip" type="text" />
                     </div>
-                    <div className="mb-6">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="address">
+                    <div className="mb-2">
+                        <label className="block text-gray-700 text-sm font-bold" htmlFor="address">
                             address
                         </label>
-                        <input className='shadow appearance-outline border-2 rounded w-full py-2 px-3
+                        <input className='shadow appearance-outline border-2 rounded w-full px-3
                      text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
                             onChange={(e) => handleChange(e)} value={newUser.address}
                             id="address" type="text" />
                     </div>
-                    <div className="flex items-center justify-between">
+                    <div className="flex justify-center">
                         <button className="bg-blue-300 font-bold 
-                        p-2 rounded focus:outline-none focus:shadow-outline" type="button" onClick={handleSubmit}>
+                        px-2 rounded focus:outline-none focus:shadow-outline" type="button" onClick={handleSubmit}>
                             Save
                         </button>
                     </div>
