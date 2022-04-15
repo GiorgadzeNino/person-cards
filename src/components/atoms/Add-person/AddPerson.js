@@ -51,11 +51,11 @@ export default function Example({ opModal, closeModal, changePersonalData, editP
     }
 
     const handleChange = (e) => {
-        setEditedUser(null)
         if (editPersonData) {
             const user = editedUser
             user[e.target.id] = e.target.value
             setEditedUser(user)
+            setNewUser(user)
         } else {
             const newState = newUser;
             newState[e.target.id] = e.target.value;
@@ -92,7 +92,7 @@ export default function Example({ opModal, closeModal, changePersonalData, editP
                         </label>
                         <input className='shadow appearance-outline border-2 rounded w-full py-2 px-3
                      text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-                            onChange={(e) => handleChange(e)} value={editedUser?.name} id="name" type="text" />
+                            onChange={(e) => handleChange(e)} value={newUser.name} id="name" type="text" />
                     </div>
                     <div className="mb-6">
                         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
@@ -100,7 +100,7 @@ export default function Example({ opModal, closeModal, changePersonalData, editP
                         </label>
                         <input className='shadow appearance-outline border-2 rounded w-full py-2 px-3
                      text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-                            onChange={(e) => handleChange(e)} value={editedUser?.email}
+                            onChange={(e) => handleChange(e)} value={newUser.email}
                             id="email" type="text" />
                     </div>
                     <div className="mb-6">
@@ -109,7 +109,7 @@ export default function Example({ opModal, closeModal, changePersonalData, editP
                         </label>
                         <input className='shadow appearance-outline border-2 rounded w-full py-2 px-3
                      text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-                            onChange={(e) => handleChange(e)} value={editedUser?.country}
+                            onChange={(e) => handleChange(e)} value={newUser.country}
                             id="country" type="text" />
                     </div>
                     <div className="mb-6">
@@ -118,7 +118,7 @@ export default function Example({ opModal, closeModal, changePersonalData, editP
                         </label>
                         <input className='shadow appearance-outline border-2 rounded w-full py-2 px-3
                      text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-                            onChange={(e) => handleChange(e)} value={editedUser?.region}
+                            onChange={(e) => handleChange(e)} value={newUser.region}
                             id="region" type="text" />
                     </div>
                     <div className="mb-6">
@@ -127,7 +127,7 @@ export default function Example({ opModal, closeModal, changePersonalData, editP
                         </label>
                         <input className='shadow appearance-outline border-2 rounded w-full py-2 px-3
                      text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-                            onChange={(e) => handleChange(e)} value={editedUser?.numberrange}
+                            onChange={(e) => handleChange(e)} value={newUser.numberrange}
                             id="numberrange" type="text" />
                     </div>
                     <div className="mb-6">
@@ -136,7 +136,7 @@ export default function Example({ opModal, closeModal, changePersonalData, editP
                         </label>
                         <input className='shadow appearance-outline border-2 rounded w-full py-2 px-3
                      text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-                            onChange={(e) => handleChange(e)} value={editedUser?.phone}
+                            onChange={(e) => handleChange(e)} value={newUser.phone}
                             id="phone" type="text" />
                     </div>
                     <div className="mb-6">
@@ -145,7 +145,7 @@ export default function Example({ opModal, closeModal, changePersonalData, editP
                         </label>
                         <input className='shadow appearance-outline border-2 rounded w-full py-2 px-3
                      text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-                            onChange={(e) => handleChange(e)} value={editedUser?.postalZip}
+                            onChange={(e) => handleChange(e)} value={newUser.postalZip}
                             id="postalZip" type="text" />
                     </div>
                     <div className="mb-6">
@@ -154,7 +154,7 @@ export default function Example({ opModal, closeModal, changePersonalData, editP
                         </label>
                         <input className='shadow appearance-outline border-2 rounded w-full py-2 px-3
                      text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-                            onChange={(e) => handleChange(e)} value={editedUser?.address}
+                            onChange={(e) => handleChange(e)} value={newUser.address}
                             id="address" type="text" />
                     </div>
                     <div className="flex items-center justify-between">

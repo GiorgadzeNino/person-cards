@@ -20,14 +20,14 @@ const PersonItem = ({ name, country, region, phone, address, id, handleDelete, h
                     <p className='text-2xl text-center mt-2'>{name}</p>
                     <p className='text-center text-lg mt-4'>Address: {address} </p>
                 </Card.Front>
-                <Card.Back isHidden={isFrontShown} className='p-4'>
+                <Card.Back isHidden={isFrontShown} className='p-2'>
                     <div className='flex items-center justify-between mx-4 '>
                         <Avatar firstName={firstName} lastName={lastName} className='mr-2' />
                         <button
-                            className='px-2 font-bold text-white bg-red-400 rounded-lg right-6 p-4'
+                            className='px-2 font-bold text-white bg-red-400 rounded-lg right-6 p-2'
                             onClick={() => handleDelete(id)}
                         >
-                            <svg className="h-8 w-8 text-red-500" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokelineap="round" strokelinejointrokelinejoin="round">
+                            <svg className="" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokelineap="round" strokelinejointrokelinejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" />
                                 <line x1="4" y1="7" x2="20" y2="7" />
                                 <line x1="10" y1="11" x2="10" y2="17" />
@@ -38,7 +38,7 @@ const PersonItem = ({ name, country, region, phone, address, id, handleDelete, h
 
                         </button>
                         <button
-                            className='px-2 p-4 font-bold text-white bg-red-400 rounded-lg right-6'
+                            className='px-2 p-2 font-bold text-white bg-red-400 rounded-lg right-6'
                             onClick={() => handleEdit(id)}
                         >
                             <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">  <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />  <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg>
